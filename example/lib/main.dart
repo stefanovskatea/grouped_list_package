@@ -46,7 +46,10 @@ class MyHomePage extends StatelessWidget {
         children: dummyData.groupedBySorting(groupBy: (element) => (element['age']), compareBy: (
             element) => (element['name']), headerBuilder:  (element) =>
         (ListTile(title: Text(element['age'].toString()))), itemBuilder: (element) =>
-        (Card(child: Text(element['name']))), separatorBuilder: ()=>(const SizedBox.shrink())),
+        (Card(child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(element['name']),
+        ))), separatorBuilder: ()=>(const SizedBox.shrink())),
       ),
     );
   }
